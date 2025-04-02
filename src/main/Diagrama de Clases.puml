@@ -1,0 +1,23 @@
+@startuml
+
+class Inscripcion {
+    -materia: List<Materia>
+    -alumno: Alumno
+
+}
+
+class Alumno {
+    -nombre: String
+    -aprobadas: List<Materia>
+}
+
+class Materia {
+    -nombre: String
+    -correlativas: List<Materia>
+}
+
+Inscripcion -> Alumno
+Inscripcion -> Materia
+Materia -> Materia
+Alumno -> Materia
+@enduml
